@@ -11,7 +11,7 @@ COPY postcss.config.mjs ./
 COPY eslint.config.mjs ./
 
 # Install dependencies
-RUN rm -f package-lock.json && npm install
+RUN rm -f package-lock.json && npm install && npm cache clean --force
 
 # Copy source code and env files
 COPY src ./src
@@ -30,11 +30,13 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install production dependencies only
-RUN rm -f package-lock.json && npm install --omit=dev
+RUN rm -f package-lock.json && npm install --omit=dev && npm cache clean --force
 
 # Copy built app from builder
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
+COPY ingest-postgres.js ./
+COPY Dokumentasi ./Dokumentasi
 
 # Create non-root user (Debian style)
 RUN groupadd -g 1001 nodejs && \
@@ -42,12 +44,15 @@ RUN groupadd -g 1001 nodejs && \
 
 USER nextjs
 
+ENV PORT=3001
+ENV NODE_ENV=production
+
 # Expose port
-EXPOSE 3000
+EXPOSE 3001
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
-  CMD node -e "require('http').get('http://localhost:3000/api/health', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})"
+  CMD node -e "require('http').get('http://localhost:3001/api/health', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})"
 
 # Run app directly
 CMD ["npm", "start"]

@@ -64,7 +64,7 @@ echo ""
 echo "⏳ Waiting for Next.js app to be ready..."
 RETRY=0
 until [ $RETRY -ge $RETRY_LIMIT ]; do
-    if curl -s http://localhost:3000/api/health > /dev/null 2>&1; then
+    if curl -s http://localhost:3001/api/health > /dev/null 2>&1; then
         echo "✓ Next.js app is ready"
         break
     fi
@@ -87,9 +87,9 @@ echo "📊 Services Status:"
 docker-compose ps
 echo ""
 echo "🌐 Access URLs:"
-echo "   Local API:  http://localhost:3000"
+echo "   Local API:  http://localhost:3001"
 echo "   Public:     https://chat.adi-muhamad.my.id"
-echo "   Health:     http://localhost:3000/api/health"
+echo "   Health:     http://localhost:3001/api/health"
 echo ""
 echo "📚 Data Ingestion:"
 echo "   docker exec chatbot_app node ingest-postgres.js --file path/to/file.txt --source \"Blog Post\""

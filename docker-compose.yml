@@ -12,7 +12,7 @@ services:
       - "127.0.0.1:5433:5432"   # port 5432 mungkin dipakai cdl_postgres, pakai 5433 (dibatasi ke localhost)
     volumes:
       - postgres_data:/var/lib/postgresql/data
-      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./backup_db_sontoloyo.sql:/docker-entrypoint-initdb.d/init.sql
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-chatbot_db}"]
       interval: 10s
