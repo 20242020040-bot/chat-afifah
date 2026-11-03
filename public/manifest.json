@@ -1,13 +1,13 @@
 {
-  "name": "Sontoloyo AI",
-  "short_name": "Sontoloyo AI",
-  "description": "Sontoloyo AI - AI Chatbot untuk blog adi-muhamad.my.id",
+  "name": "Princess AI Asisten",
+  "short_name": "Princess AI",
+  "description": "Princess AI Asisten - chatbot customer care dengan tema pastel",
   "display": "standalone",
   "start_url": "/",
   "scope": "/",
   "orientation": "portrait",
-  "theme_color": "#2563eb",
-  "background_color": "#0f172a",
+  "theme_color": "#f5b6c8",
+  "background_color": "#fff7fb",
   "categories": ["productivity", "utilities"],
   "icons": [
     {

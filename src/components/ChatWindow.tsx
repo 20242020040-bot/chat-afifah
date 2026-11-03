@@ -26,14 +26,14 @@ export default function ChatWindow({ messages }: { messages: Message[] }) {
       {messages.length === 0 ? (
         <div className="flex items-center justify-center h-full">
           <div className="text-center">
-            <div className="bg-blue-100 dark:bg-blue-900 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-              <i className="fas fa-robot text-3xl text-blue-600 dark:text-blue-400"></i>
+            <div className="bg-rose-100 dark:bg-rose-900/40 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-rose-200/50 dark:shadow-rose-950/40">
+              <i className="fas fa-robot text-3xl text-rose-500 dark:text-rose-300"></i>
             </div>
-            <h2 className="text-xl font-semibold mb-2 text-gray-900 dark:text-white">Selamat datang!</h2>
-            <p className="text-gray-600 dark:text-gray-400 max-w-sm">
-              Halloo.. Saya adalah Sontoloyo AI<br>
+            <h2 className="font-display text-2xl font-semibold mb-2 text-rose-900 dark:text-rose-100">Selamat datang!</h2>
+            <p className="text-rose-700 dark:text-rose-200/90 max-w-sm">
+              Hallo, saya Princess AI Asisten.<br>
               </br>
-              Anda bisa bertanya tentang apapun terkait informasi yang ada di dalam konten blog saya!
+              Saya siap membantu customer dengan respons cepat, ramah, dan jelas.
             </p>
           </div>
         </div>
@@ -46,8 +46,8 @@ export default function ChatWindow({ messages }: { messages: Message[] }) {
           >
             <div
               className={`w-8 h-8 rounded-full flex items-center justify-center text-white shrink-0 ${message.role === 'user'
-                ? 'bg-slate-700 dark:bg-slate-600'
-                : 'bg-blue-600 dark:bg-blue-700'
+                ? 'bg-amber-300 dark:bg-amber-400 text-amber-950'
+                : 'bg-rose-400 dark:bg-rose-500'
                 }`}
             >
               <i
@@ -57,8 +57,8 @@ export default function ChatWindow({ messages }: { messages: Message[] }) {
             </div>
             <div
               className={`max-w-[80%] px-4 py-3 rounded-2xl ${message.role === 'user'
-                ? 'bg-blue-600 text-white rounded-tr-none'
-                : 'bg-white dark:bg-slate-800 text-gray-900 dark:text-gray-100 rounded-tl-none border border-gray-200 dark:border-slate-700'
+                ? 'bg-gradient-to-br from-amber-100 to-orange-100 text-amber-950 rounded-tr-none border border-amber-200/90'
+                : 'bg-rose-50 dark:bg-[#3a2340] text-rose-900 dark:text-rose-100 rounded-tl-none border border-rose-200 dark:border-rose-800/60'
                 }`}
             >
               <div className="text-sm leading-relaxed whitespace-pre-wrap break-words">
@@ -82,7 +82,7 @@ export default function ChatWindow({ messages }: { messages: Message[] }) {
                       ),
                       li: ({ node, ...props }) => <li className="ml-1 leading-snug [&>p]:mb-0 [&>p]:inline" {...props} />,
                       strong: ({ node, ...props }) => (
-                        <strong className="font-bold text-gray-900 dark:text-gray-100" {...props} />
+                        <strong className="font-bold text-rose-900 dark:text-rose-100" {...props} />
                       ),
                       p: ({ node, ...props }) => <p className="mb-2 last:mb-0 leading-snug" {...props} />,
                     }}
@@ -99,8 +99,8 @@ export default function ChatWindow({ messages }: { messages: Message[] }) {
               </div>
               <p
                 className={`text-xs mt-2 ${message.role === 'user'
-                  ? 'text-blue-100'
-                  : 'text-gray-500 dark:text-gray-400'
+                  ? 'text-amber-700'
+                  : 'text-rose-500 dark:text-rose-300/80'
                   }`}
               >
                 {new Date(message.timestamp).toLocaleTimeString('id-ID', {

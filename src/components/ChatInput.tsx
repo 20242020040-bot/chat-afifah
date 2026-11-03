@@ -52,7 +52,7 @@ export default function ChatInput({
 
 
   return (
-    <div className="border-t border-gray-200 dark:border-slate-800 pt-4">
+    <div className="border-t border-rose-200 dark:border-rose-900/50 pt-4">
       <div className="relative flex items-end gap-3">
         <textarea
           ref={textareaRef}
@@ -61,15 +61,15 @@ export default function ChatInput({
           onKeyDown={handleKeyDown}
           onCompositionStart={() => setIsComposing(true)}
           onCompositionEnd={() => setIsComposing(false)}
-          placeholder="Tanya apa aja, asal jangan tanya kapan kiamat"
+          placeholder="Tulis pertanyaan customer di sini..."
           disabled={isLoading}
           rows={1}
-          className="flex-1 p-3 text-sm md:text-base rounded-lg border border-gray-300 dark:border-slate-700 bg-gray-50 dark:bg-slate-800 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-600 resize-none max-h-[120px] disabled:opacity-50 disabled:cursor-not-allowed"
+          className="flex-1 p-3 text-sm md:text-base rounded-lg border border-rose-200 dark:border-rose-800/60 bg-rose-50/80 dark:bg-[#3a2340] text-rose-900 dark:text-rose-100 placeholder-rose-400 dark:placeholder-rose-300/60 focus:outline-none focus:ring-2 focus:ring-rose-300 dark:focus:ring-rose-500 resize-none max-h-[120px] disabled:opacity-50 disabled:cursor-not-allowed"
         />
         <button
           onClick={handleSend}
           disabled={!input.trim() || isLoading}
-          className="px-4 py-3 bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-600 text-white rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+          className="px-4 py-3 bg-rose-400 hover:bg-rose-500 dark:bg-rose-500 dark:hover:bg-rose-400 text-white rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center shadow-md shadow-rose-200/70 dark:shadow-rose-900/40"
         >
           {isLoading ? (
             <i className="fas fa-spinner animate-spin"></i>
@@ -78,8 +78,8 @@ export default function ChatInput({
           )}
         </button>
       </div>
-      <div className="text-xs text-gray-500 dark:text-gray-400 mt-6 text-center space-y-1">
-        <p>“SontoloyoAI is just an AI, so it can make mistakes.”</p>
+      <div className="text-xs text-rose-500 dark:text-rose-300/80 mt-6 text-center space-y-1">
+        <p>"Princess AI Asisten dapat melakukan kesalahan, mohon cek ulang informasi penting."</p>
         <p>© 2026 Hak Cipta Dilindungi.</p>
         <p>
           Developed by{' '}
@@ -87,7 +87,7 @@ export default function ChatInput({
             href="https://adi-muhamad.my.id"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 hover:underline transition-colors"
+            className="text-rose-500 dark:text-rose-300 hover:text-rose-700 dark:hover:text-rose-200 hover:underline transition-colors"
           >
             adi-muhamad.my.id
           </a>

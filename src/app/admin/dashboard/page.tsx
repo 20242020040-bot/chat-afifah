@@ -108,7 +108,7 @@ export default function AdminDashboard() {
               <i className="fas fa-robot text-white text-sm" />
             </div>
             <div>
-              <span className="font-bold text-white text-sm">Sontoloyo AI</span>
+              <span className="font-bold text-white text-sm">Princess AI Asisten</span>
               <span className="text-xs text-blue-400 ml-2">Admin Dashboard</span>
             </div>
           </div>
@@ -340,7 +340,7 @@ export default function AdminDashboard() {
                   <div className="w-6 h-6 bg-blue-700 rounded-full flex items-center justify-center">
                     <i className="fas fa-robot text-xs text-white" />
                   </div>
-                  <span className="text-xs font-medium text-blue-300">Sontoloyo AI</span>
+                  <span className="text-xs font-medium text-blue-300">Princess AI Asisten</span>
                 </div>
                 <div className="bg-blue-950/40 border border-blue-900/30 rounded-xl p-4">
                   <p className="text-sm text-slate-200 leading-relaxed whitespace-pre-wrap">
